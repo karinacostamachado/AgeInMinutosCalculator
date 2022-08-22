@@ -24,42 +24,52 @@
 
     <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
-        android:padding="15dp"
-        android:id="@+id/secondConstraint"
-        android:background="@color/light_yellow"
         android:layout_height="match_parent"
-        tools:context=".MainActivity"
+        android:id="@+id/seconConstraint"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintBottom_toBottomOf="parent">
 
+        <ImageView
+            android:id="@+id/imageviewLogo"
+            android:layout_width="150dp"
+            android:layout_height="150dp"
+            android:src="@drawable/oclock_removebg_preview"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintBottom_toTopOf="@id/mainCard"
+            app:layout_constraintEnd_toStartOf="@id/textviewFirstTitle"
+            app:layout_constraintStart_toStartOf="parent"/>
+
         <TextView
+            app:layout_constraintTop_toTopOf="parent"
             android:id="@+id/textviewFirstTitle"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="CALCULATE YOUR"
+            android:padding="10dp"
             android:fontFamily="sans-serif-black"
             android:textSize="25dp"
-            android:layout_marginTop="25dp"
+            android:layout_marginTop="70dp"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent" />
+            app:layout_constraintStart_toEndOf="@id/imageviewLogo"/>
 
         <TextView
             android:id="@+id/textviewSecondTitle"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="AGE"
+            android:paddingStart="30dp"
+            android:paddingEnd="20dp"
             android:padding="10dp"
             android:textColor="@color/white"
-            android:background="@color/teal_200"
+            android:background="@drawable/shape"
             android:fontFamily="sans-serif-black"
             android:textSize="25dp"
             android:layout_marginTop="10dp"
             app:layout_constraintTop_toBottomOf="@id/textviewFirstTitle"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent"/>
+            app:layout_constraintStart_toEndOf="@id/imageviewLogo"/>
 
         <TextView
             android:id="@+id/textviewThirdTitle"
@@ -70,74 +80,101 @@
             android:textSize="25dp"
             android:layout_marginTop="15dp"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintStart_toEndOf="@id/imageviewLogo"
             app:layout_constraintTop_toBottomOf="@id/textviewSecondTitle"/>
 
-        <Button
-            android:id="@+id/buttonConvert"
-            android:layout_width="match_parent"
+        <androidx.cardview.widget.CardView
+            android:layout_width="350dp"
             android:layout_height="wrap_content"
-            android:text="SELECT DATE"
-            android:textColor="#6C7171"
-            android:textSize="18dp"
-            android:padding="10dp"
-            android:fontFamily="sans-serif-black"
-            android:backgroundTint="@color/white"
-            android:layout_marginTop="15dp"
             app:layout_constraintTop_toBottomOf="@id/textviewThirdTitle"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent"/>
+            app:layout_constraintStart_toStartOf="parent"
+            app:cardElevation="20dp"
+            android:id="@+id/mainCard"
+            app:layout_constraintBottom_toBottomOf="parent">
 
-        <TextView
-            android:id="@+id/textviewSelectedDate"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="16/04/1998"
-            android:layout_marginTop="25dp"
-            android:fontFamily="sans-serif-medium"
-            android:textSize="18dp"
-            app:layout_constraintTop_toBottomOf="@id/buttonConvert"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent"/>
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:layout_width="350dp"
+                android:layout_height="wrap_content"
+                android:padding="30dp">
 
-        <TextView
-            android:id="@+id/textviewFourth"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="Selected Date"
-            android:fontFamily="sans-serif-black"
-            android:textColor="#8A8A8A"
-            android:textSize="16dp"
-            android:layout_marginTop="5dp"
-            app:layout_constraintTop_toBottomOf="@id/textviewSelectedDate"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent"/>
+                <Button
+                    android:id="@+id/buttonConvert"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="SELECT DATE"
+                    android:textColor="@color/white"
+                    android:textSize="18dp"
+                    android:padding="10dp"
+                    android:fontFamily="sans-serif-black"
+                    android:backgroundTint="@color/teal_200"
+                    android:layout_marginTop="15dp"
+                    app:layout_constraintTop_toTopOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"/>
 
-        <TextView
-            android:id="@+id/textviewAgeConverted"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="1440"
-            android:textSize="35dp"
-            android:fontFamily="sans-serif-medium"
-            android:layout_marginTop="35dp"
-            app:layout_constraintTop_toBottomOf="@id/textviewFourth"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent"/>
+                <TextView
+                    android:id="@+id/textviewSelectedDate"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="16/04/1998"
+                    android:textColor="#333333"
+                    android:layout_marginTop="25dp"
+                    android:fontFamily="sans-serif-medium"
+                    android:textSize="24dp"
+                    app:layout_constraintTop_toBottomOf="@id/buttonConvert"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"/>
 
-        <TextView
-            android:id="@+id/textviewFifth"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="In minutes till date"
-            android:fontFamily="sans-serif-black"
-            android:textColor="#8A8A8A"
-            android:textSize="16dp"
-            android:layout_marginTop="4dp"
-            app:layout_constraintTop_toBottomOf="@id/textviewAgeConverted"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent"/>
+                <TextView
+                    android:id="@+id/textviewFourth"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Selected Date"
+                    android:fontFamily="sans-serif-black"
+                    android:textColor="#8A8A8A"
+                    android:textSize="20dp"
+                    android:layout_marginTop="10dp"
+                    app:layout_constraintTop_toBottomOf="@id/textviewSelectedDate"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"/>
+
+                <TextView
+                    android:id="@+id/textviewAgeConverted"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="1440"
+                    android:textColor="#333333"
+                    android:paddingStart="30dp"
+                    android:paddingEnd="30dp"
+                    android:textSize="35dp"
+                    android:background="@drawable/shape"
+                    android:fontFamily="sans-serif-medium"
+                    android:layout_marginTop="35dp"
+                    app:layout_constraintTop_toBottomOf="@id/textviewFourth"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"/>
+
+                <TextView
+                    android:id="@+id/textviewFifth"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="In minutes till date"
+                    android:fontFamily="sans-serif-black"
+                    android:textColor="#8A8A8A"
+                    android:textSize="20dp"
+                    android:layout_marginTop="4dp"
+                    app:layout_constraintTop_toBottomOf="@id/textviewAgeConverted"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"/>
+
+
+            </androidx.constraintlayout.widget.ConstraintLayout>
+
+        </androidx.cardview.widget.CardView>
+
 
     </androidx.constraintlayout.widget.ConstraintLayout>
+
 
 </androidx.constraintlayout.widget.ConstraintLayout>

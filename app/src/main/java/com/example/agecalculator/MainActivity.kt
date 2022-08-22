@@ -23,11 +23,12 @@ class MainActivity : AppCompatActivity() {
 
         binding.shimmerLayout.visibility = View.VISIBLE
         binding.shimmerLayout.startShimmer()
-        binding.secondConstraint.visibility = View.GONE
+        binding.seconConstraint.visibility = View.GONE
 
         Handler().postDelayed({
             binding.shimmerLayout.stopShimmer()
-            binding.secondConstraint.visibility = View.VISIBLE
+            binding.shimmerLayout.visibility = View.GONE
+            binding.seconConstraint.visibility = View.VISIBLE
             binding.buttonConvert.setOnClickListener {
                 setDatePicker()
             }
